@@ -1,0 +1,165 @@
+*{
+
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Yaldevi', sans-serif;
+
+
+    --logo-color : #f2f2f2;
+
+}
+.logo{
+
+    color: var(--logo-color);
+    letter-spacing: 3px;
+    font-size: 22px;
+    font-weight: bold;
+
+}
+
+nav{
+
+    --nav-background-color: grey;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: var(--nav-background-color);
+
+    width: 100%;
+
+}
+
+.nav-elements{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 40%;   
+    padding: 0;
+    margin: 0;
+
+}
+.nav-elements li{
+
+    list-style: none;
+    
+
+}
+
+.nav-elements a{
+
+    color: var(--logo-color);
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+
+.burger{
+
+    display: none;
+
+}
+
+.burger div{
+
+    width: 25px;
+    height: 3px;
+    background-color: var(--logo-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+
+}
+
+@media screen and (max-width:900px){
+
+    .nav-elements{
+
+        width: 53%;
+    
+    }
+    
+}
+
+@media screen and (max-width:600px){
+
+    body{
+
+        overflow-x: hidden;
+
+    }
+
+    .nav-elements{
+
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: var(--nav-background-color);
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+        transform: translateX(100%);
+        align-items: center;
+        transition: transform 400ms ease-in-out;
+
+    }
+
+    .burger{
+
+        display: block;
+        cursor: pointer;
+
+    }
+
+    .nav-elements li{
+
+        opacity: 0;
+
+    }
+    
+}
+
+.nav-active{
+
+    transform: translateX(0%);
+
+}
+.toggle .line1{
+
+    transform: rotate(-45deg) translate(-5px,6px);
+
+}
+
+.toggle .line2{
+    
+    opacity: 0;
+
+}
+
+.toggle .line3{
+
+    transform: rotate(45deg) translate(-5px,-6px);
+    
+}
+
+@keyframes navLinkFade{
+
+    from{
+
+        opacity: 0;
+        transform: translateX(50px);
+
+    }
+    to{
+
+        opacity: 1;
+        transform: translateX(0px);
+
+
+    }
+
+}
