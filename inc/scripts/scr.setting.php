@@ -8,7 +8,7 @@
 
     <ul class="userInformation">
 
-        <li>User name</li>
+        <li>Username</li>
         
         
 
