@@ -15,12 +15,22 @@
             <li><a href="#">Profile</a></li>
 
             <li><a href="#">Discover</a></li>
+            
+            <!-- Login Icon -->
 
-            <li><a href="#">About</a></li>
-
-            <li><a href="#">Contact</a></li>
-
+            <li class="loginIcon">
+                <div>
+                
+                    <a href="login"><i class="fas fa-sign-in-alt"></i>Login</a>
+            
+                </div>
+            </li>
+    
         </ul>
+
+        
+
+
 
 
         <div class= "burger">

@@ -5,6 +5,7 @@ body{
 :root{
 
 --logo-color : #f2f2f2;
+--after-hover-color: white;
 --nav-background-color: rgb(32, 29, 29);
 
 }
@@ -17,6 +18,14 @@ body{
     font-weight: bold;
     text-decoration: none;
 
+
+}
+
+.logo a:hover {
+
+
+    color:  var(--after-hover-color);
+    transition: color ease-in-out 0.2s;
 
 }
 
@@ -50,7 +59,23 @@ nav{
 
 .nav-elements li:hover{
 
+    color: var(--after-hover-color);
     text-decoration: underline;
+    transition: all ease-in-out 2s;
+
+}
+
+.loginIcon i{
+
+    padding-right: 5px;
+
+}
+
+.loginIcon{
+
+    color: var(--logo-color);
+    font-size: 3vh;
+    
 
 }
 
