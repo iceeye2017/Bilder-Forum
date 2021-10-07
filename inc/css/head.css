@@ -1,13 +1,13 @@
-*{
-
-    margin: 0;
-    box-sizing: border-box;
+body{
     font-family: 'Yaldevi', sans-serif;
+}
 
+:root{
 
-    --logo-color : #f2f2f2;
+--logo-color : #f2f2f2;
 
 }
+
 .logo{
 
     color: var(--logo-color);
