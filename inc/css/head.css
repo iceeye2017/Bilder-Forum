@@ -1,10 +1,11 @@
 body{
-    font-family: 'Yaldevi', sans-serif;
+    font-family: 'poppins', sans-serif;
 }
 
 :root{
 
 --logo-color : #f2f2f2;
+--nav-background-color: rgb(32, 29, 29);
 
 }
 
@@ -18,8 +19,6 @@ body{
 }
 
 nav{
-
-    --nav-background-color: grey;
 
     display: flex;
     justify-content: space-around;
