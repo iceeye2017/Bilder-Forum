@@ -14,3 +14,15 @@ main{
     
 
 }
+@media screen and (max-width: 600px) {
+
+    .profilePic img{
+
+        width: 250px;
+        height: 300px;
+        border-radius: 30%;
+        
+    
+    }  
+    
+}
