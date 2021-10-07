@@ -1,14 +1,17 @@
-body{
-    font-family: 'poppins', sans-serif;
-}
 
 :root{
 
 --logo-color : #f2f2f2;
+--font-family: poppins, sans-serif;
 --after-hover-color: white;
 --nav-background-color: rgb(32, 29, 29);
 
 }
+
+body{
+    font-family: var(--font-family);
+}
+
 
 .logo a{
 
@@ -61,7 +64,7 @@ nav{
 
     color: var(--after-hover-color);
     text-decoration: underline;
-    transition: all ease-in-out 2s;
+    transition: all ease-in-out 0.2s;
 
 }
 

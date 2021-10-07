@@ -12,9 +12,9 @@
                 
         <ul class = nav-elements>
 
-            <li><a href="#">Profile</a></li>
+            <li><a href="profile">Profile</a></li>
 
-            <li><a href="#">Discover</a></li>
+            <li><a href="discover">Discover</a></li>
             
             <!-- Login Icon -->
 
