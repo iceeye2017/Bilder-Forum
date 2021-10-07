@@ -10,7 +10,5 @@
   <link rel="stylesheet" href="inc/css/reset.css">
   <link rel="stylesheet" href="inc/css/head.css">
 
-  
-
 </head>
 

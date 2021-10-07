@@ -9,12 +9,14 @@ body{
 
 }
 
-.logo{
+.logo a{
 
     color: var(--logo-color);
     letter-spacing: 3px;
     font-size: 22px;
     font-weight: bold;
+    text-decoration: none;
+
 
 }
 
@@ -44,6 +46,11 @@ nav{
 
     list-style: none;
     
+}
+
+.nav-elements li:hover{
+
+    text-decoration: underline;
 
 }
 

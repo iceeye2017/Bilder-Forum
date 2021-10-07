@@ -4,7 +4,7 @@
         
         <div class = "logo">
 
-            Picture Forum
+           <a href="#">Picture Forum</a>
 
         </div>
 
@@ -12,7 +12,7 @@
                 
         <ul class = nav-elements>
 
-            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
 
             <li><a href="#">Discover</a></li>
 
