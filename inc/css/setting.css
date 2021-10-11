@@ -1,7 +1,8 @@
 :root{
 
     --sub-background-color: rgb(38, 38, 38);
-
+    --text-color: #f2f2f2;
+    --nav-background-color: rgb(32, 29, 29);
 
 }
 
@@ -18,18 +19,45 @@ main{
     padding-top: 2vh;
     display: flex;
     justify-content: center;
-    
+    align-items: flex-end;
 
 }
 
 .profilePic img{
 
+    position: relative;
     width: 400px;
-    height: 500px;
-    border-radius: 30%;
+    height: 400px;
+    border: 8px solid var(--text-color);
+    border-radius: 100%;
     
 
 }
+
+.avatar{
+    
+    position: absolute;
+
+}
+
+.file-upload{
+
+    display: none;
+
+}
+.upload-button{
+
+    font-size: 25px;
+    color: var(--nav-background-color);
+
+}
+
+.upload-button:hover, .upload-button:focus{
+
+    cursor: pointer;
+
+}
+
 
 .userInformation{
 
@@ -54,9 +82,7 @@ main{
     .profilePic img{
      
         width: 250px;
-        height: 300px;
-        border-radius: 30%;
-        
+        height: 250px;
     
     }  
     .userInformation{
