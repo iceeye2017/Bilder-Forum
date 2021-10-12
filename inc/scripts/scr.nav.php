@@ -26,11 +26,7 @@
                 </div>
             </li>
 
-            <li class="settingsIcon">
-
-                <a href ="#" class = "setting"><i class="fas fa-cog"></i></a>
-
-            </li>
+            
     
         </ul>
 
