@@ -1,25 +1,40 @@
-body{
-    font-family: 'Yaldevi', sans-serif;
-}
 
 :root{
 
 --logo-color : #f2f2f2;
+--font-family: poppins, sans-serif;
+--after-hover-color: white;
+--nav-background-color: rgb(32, 29, 29);
+--sub-background-color: rgb(28,28,28);
 
 }
 
-.logo{
+
+body{
+    font-family: var(--font-family);
+}
+
+
+.logo a{
 
     color: var(--logo-color);
     letter-spacing: 3px;
     font-size: 22px;
     font-weight: bold;
+    text-decoration: none;
+
+
+}
+
+.logo a:hover {
+
+
+    color:  var(--after-hover-color);
+    transition: color ease-in-out 0.2s;
 
 }
 
 nav{
-
-    --nav-background-color: grey;
 
     display: flex;
     justify-content: space-around;
@@ -44,6 +59,27 @@ nav{
 .nav-elements li{
 
     list-style: none;
+    
+}
+
+.nav-elements li:hover{
+
+    color: var(--after-hover-color);
+    text-decoration: underline;
+    transition: all ease-in-out 0.2s;
+
+}
+
+.loginIcon i{
+
+    padding-right: 5px;
+
+}
+
+.loginIcon{
+
+    color: var(--logo-color);
+    font-size: 3vh;
     
 
 }
@@ -73,6 +109,9 @@ nav{
     transition: all 0.3s ease;
 
 }
+
+
+
 
 @media screen and (max-width:900px){
 
@@ -163,3 +202,5 @@ nav{
     }
 
 }
+
+

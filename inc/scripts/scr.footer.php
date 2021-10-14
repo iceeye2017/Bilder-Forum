@@ -2,4 +2,5 @@
 
 <script src="inc/js/head.js"></script>
 
-</body>
+<script src="inc/js/setting.js"></script>
+

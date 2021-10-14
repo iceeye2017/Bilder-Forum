@@ -5,48 +5,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Yaldevi&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="./inc/css/reset.css">
   <link rel="stylesheet" href="./inc/css/head.css">
-
-  
+  <link rel="stylesheet" href="inc/css/reset.css">
+  <link rel="stylesheet" href="inc/css/nav.css">
+  <link rel="stylesheet" href="inc/css/profile.css">
+  <script src="https://kit.fontawesome.com/2de15a6a16.js" crossorigin="anonymous"></script>
 
 </head>
-
-<body>
-
-    <nav>
-        
-        <div class = "logo">
-
-            Picture Forum
-
-        </div>
-
-    
-                
-        <ul class = nav-elements>
-
-            <li><a href="#">Home</a></li>
-
-            <li><a href="#">Discover</a></li>
-
-            <li><a href="#">About</a></li>
-
-            <li><a href="#">Contact</a></li>
-
-        </ul>
-
-
-        <div class= "burger">
-
-            <div class = "line1"></div>
-            <div class = "line2"></div>
-            <div class = "line3"></div>
-
-        </div>
-        
-
-    </nav>
-    
 

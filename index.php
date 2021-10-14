@@ -7,8 +7,22 @@
   
     UserManager::connect("root", "", "localhost", "bilderforum");
 
-    
+?>
+<body>
 
-    UserManager::close();
+
+    <?php
+
+        include_once "inc/scripts/scr.nav.php";
+        include_once "inc/scripts/scr.profile.php";
+        include_once "inc/scripts/scr.footer.php";
+
+    ?>
+
+</body>
+
+<?php
+
+  UserManager::close();
 
 ?>

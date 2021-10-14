@@ -10,6 +10,12 @@ Funcionality:
   
   Homepage:
      Random Users trending pictures
+     
+  Setting:
+      User can change profile pic
+      //User can change name (optional)
+      //User can reset password optional)
+      //User can change mail optional)
   
   
   
