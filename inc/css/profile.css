@@ -3,6 +3,8 @@
     --sub-background-color: rgb(38, 38, 38);
     --text-color: #f2f2f2;
     --nav-background-color: rgb(32, 29, 29);
+    --text-font-size: 1.25em;
+    --button-cancel-color: rgb(112, 7, 0);
 
 }
 
@@ -26,8 +28,8 @@ main{
 .profilePic img{
 
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 40vh;
+    height: 40vh;
     border: 8px solid var(--text-color);
     border-radius: 100%;
     
@@ -63,7 +65,7 @@ main{
 
     margin-top: 2vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     font-size: 18px;
     color: var(--logo-color);
     
@@ -73,7 +75,81 @@ main{
 .userInformation li{
 
     list-style: none;
-    
+    text-align: center;
+
+}
+
+.userInformation li input{
+
+    color: var(--text-color);
+    margin-top: 1vh;
+    font-size: var(--text-font-size);
+    background-color: var(--sub-background-color);
+    border: 2px solid var(--text-color);
+    border-radius: 40px;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+
+
+}
+
+#newPassword{
+
+    display: none;
+
+}
+
+.profileButtons{
+
+    text-align: center;
+    display: none;
+
+
+}
+
+.button{
+
+    font-size: var(--text-font-size);
+    background-color: var(--sub-background-color);
+    border: 2px solid var(--text-color);
+    border-radius: 40px;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    width: 10vh;
+    text-align: center;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color ease-in-out 0.25s;
+
+}
+
+#bcancel, #bsave{
+
+    margin-top: 1vh;   
+
+}
+#bcancel{
+
+    border-color: var(--button-cancel-color);
+    margin-right: 1vh;
+    background-color: var(--sub-background-color);
+
+}
+#bcancel:hover, #bcancel:focus{
+
+    background-color: var(--button-cancel-color);
+
+}
+
+#bsave{
+
+
+
+    margin-left: 1vh;
 
 }
 
@@ -81,8 +157,8 @@ main{
 
     .profilePic img{
      
-        width: 250px;
-        height: 250px;
+        width: 25vh;
+        height: 25vh;
     
     }  
     .userInformation{

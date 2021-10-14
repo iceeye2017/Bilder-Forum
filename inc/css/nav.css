@@ -36,6 +36,7 @@ body{
 
 nav{
 
+    z-index: 100;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -48,6 +49,7 @@ nav{
 
 .nav-elements{
 
+    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -59,6 +61,7 @@ nav{
 .nav-elements li{
 
     list-style: none;
+    
     
 }
 

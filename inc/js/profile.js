@@ -1,9 +1,6 @@
 
 
 document.getElementById("profileImage").addEventListener("click",uploadPic);
-    
-
-
 
 function uploadPic(){
 
@@ -13,6 +10,10 @@ function uploadPic(){
 
 function previewFile() {
    
+    var buttons = document.getElementsByClassName("profileButtons")[0];
+    
+    buttons.style.display = "block";
+
     var img = document.getElementById("profilePic");
     var input = document.getElementById("imageUpload").files[0];
 
