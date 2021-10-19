@@ -3,7 +3,8 @@
     --sub-background-color: rgb(38, 38, 38);
     --text-color: #f2f2f2;
     --nav-background-color: rgb(32, 29, 29);
-    --text-font-size: 1.25em;
+    --text-absolute-fontsize: 2.4vh;
+    --text-font-size: 1em;
     --button-cancel-color: rgb(112, 7, 0);
 
 }
@@ -11,6 +12,7 @@
 
 main{
     
+    font-size: var(--text-absolute-fontsize);
     background-color: var(--sub-background-color);
     height: 92vh;
 
@@ -49,7 +51,7 @@ main{
 }
 .upload-button{
 
-    font-size: 25px;
+    font-size: var(--text-font-size);
     color: var(--nav-background-color);
 
 }
@@ -66,7 +68,7 @@ main{
     margin-top: 2vh;
     display: flex;
     flex-direction: column;
-    font-size: 18px;
+    font-size: var(--text-font-size);
     color: var(--logo-color);
     
 
@@ -91,7 +93,7 @@ main{
     padding-right: 1vh;
     padding-top: 0.5vh;
     padding-bottom: 0.5vh;
-
+    vertical-align: center;
 
 }
 
@@ -152,6 +154,15 @@ main{
     margin-left: 1vh;
 
 }
+
+.pen{
+
+    display: inline;
+    font-size: var(--text-font-size);
+    cursor: pointer;
+
+}
+
 
 @media screen and (max-width: 600px) {
 

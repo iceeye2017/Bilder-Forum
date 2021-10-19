@@ -21,18 +21,25 @@
 
         <ul class="userInformation">
 
-            <li><input name = "username" value="Username"/></li>
-            <li><input name = "oldPassword" value="Password"/></li>
-            <li id = "newPassword"><input name = "newPassword" value="New Password"/></li>
+            <li>
+                <input id="username" type="text" readonly placeholder="Username"/>
+                <div id="userpen" class="pen"><i class="fa fa-solid fa-pen"  onclick="changeUsername()"></i></div>
+
+            </li>
+            <li>
+                <input id="oldPassword" type="password" readonly placeholder="Password"/>
+                <div id="passpen" class="pen"><i class="fa fa-solid fa-pen" onclick="changePassword()"></i></div>
+                
+            </li>
+            <li id = "newPassword"><input name = "newPassword" type="password" placeholder="New Password"/></li>
             
 
         </ul>
 
         <div class = "profileButtons">
 
-            <button class="button" id ="bcancel">Cancel</button>
-            <button class="button" id="bsave">Save</button>
-
+            <input type="submit"class="button" id ="bcancel" onclick="buttoncancel()" value="Cancel">
+            <input type="submit"class="button" id ="bsave" value="Save">
 
         </div>
 

@@ -1,5 +1,6 @@
 
 
+//bind event listener to picture
 document.getElementById("profileImage").addEventListener("click",uploadPic);
 
 function uploadPic(){
@@ -7,12 +8,18 @@ function uploadPic(){
     document.getElementById("imageUpload").click();
 
 }
+function activateButtons(){
 
-function previewFile() {
-   
     var buttons = document.getElementsByClassName("profileButtons")[0];
     
     buttons.style.display = "block";
+
+}
+
+//update picture
+function previewFile() {
+   
+    activateButtons();
 
     var img = document.getElementById("profilePic");
     var input = document.getElementById("imageUpload").files[0];
@@ -34,5 +41,32 @@ function previewFile() {
         img.src = reader.result;
 
     }
+
+  }
+//cancel Form submission
+  function buttoncancel(){
+
+    return false;
+
+  }
+
+//activate field username and show buttons
+  function changeUsername(){
+
+    document.getElementById("username").readOnly = false;
+    document.getElementById("username").focus();
+    document.getElementById("userpen").style.display="none";
+    activateButtons();
+
+
+  }
+
+  function changePassword(){
+
+    document.getElementById("oldPassword").readOnly = false;
+    document.getElementById("oldPassword").focus();
+    document.getElementById("newPassword").style.display="block";
+    document.getElementById("passpen").style.display="none";
+    activateButtons();
 
   }
