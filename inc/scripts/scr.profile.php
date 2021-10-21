@@ -4,7 +4,7 @@
 
         <div class = "profilePic">
 
-            <img id="profilePic" src="https://www.inixgroup.com/wp-content/uploads/2020/12/placeholder.png" alt="Profile Picture"/>
+            <img id="profilePic" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile Picture"/>
 
             
             <div id="profileImage" class="p-image avatar">
@@ -22,17 +22,25 @@
         <ul class="userInformation">
 
             <li>
+
                 <input id="username" type="text" readonly placeholder="Username"/>
-                <div id="userpen" class="pen"><i class="fa fa-solid fa-pen"  onclick="changeUsername()"></i></div>
+                <div id="userpen" class="pen"><i id="usernamePen" class="fa fa-solid fa-pen"  onclick="changeUsername()"></i></div>
 
             </li>
+
             <li>
+
                 <input id="oldPassword" type="password" readonly placeholder="Password"/>
-                <div id="passpen" class="pen"><i class="fa fa-solid fa-pen" onclick="changePassword()"></i></div>
+                <div id="passpen" class="pen"><i id="passwordPen" class="fa fa-solid fa-pen" onclick="changePassword()"></i></div>
                 
             </li>
-            <li id = "newPassword"><input name = "newPassword" type="password" placeholder="New Password"/></li>
-            
+
+            <li id = "newPassword">
+
+                <input name = "newPassword" type="password" placeholder="New Password"/>
+                <div id="hiddenPen" class="pen"><i class="fa fa-solid fa-pen"></i></div>
+                
+            </li>
 
         </ul>
 

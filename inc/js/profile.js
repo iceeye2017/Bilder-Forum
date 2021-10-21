@@ -54,8 +54,7 @@ function previewFile() {
   function changeUsername(){
 
     document.getElementById("username").readOnly = false;
-    document.getElementById("username").focus();
-    document.getElementById("userpen").style.display="none";
+    document.getElementById("userpen").style.visibility="hidden";
     activateButtons();
 
 
@@ -64,9 +63,8 @@ function previewFile() {
   function changePassword(){
 
     document.getElementById("oldPassword").readOnly = false;
-    document.getElementById("oldPassword").focus();
-    document.getElementById("newPassword").style.display="block";
-    document.getElementById("passpen").style.display="none";
+    document.getElementById("newPassword").style.display = "block";
+    document.getElementById("passpen").style.visibility="hidden";
     activateButtons();
 
   }
