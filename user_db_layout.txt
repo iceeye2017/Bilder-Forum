@@ -1,1 +1,1 @@
-users(uid, uname, uemail, upassword, uprofileimg, uprofileimgtype)
+users(uid, uname, uemail, upassword, uprofileimg, uprofileimgtype);
