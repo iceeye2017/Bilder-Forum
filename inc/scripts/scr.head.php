@@ -1,6 +1,8 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>Picture-Forum</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,6 +12,7 @@
   <link rel="stylesheet" href="inc/css/reset.css">
   <link rel="stylesheet" href="inc/css/nav.css">
   <link rel="stylesheet" href="inc/css/profile.css">
+  <link rel="stylesheet" href="inc/css/login.css">
   <script src="https://kit.fontawesome.com/2de15a6a16.js" crossorigin="anonymous"></script>
 
 </head>

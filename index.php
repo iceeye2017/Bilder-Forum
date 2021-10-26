@@ -14,9 +14,23 @@
     <?php
 
         include_once "inc/scripts/scr.nav.php";
-        include_once "inc/scripts/scr.profile.php";
+        $site = "profile";
+        if(isset($_GET["site"]) && !empty($_GET["site"])){
+            $site = $_GET["site"];
+            $site = strtolower($_GET["site"]);
+        }
+        
+        switch($site){
+            case "login": {
+                include "inc/scripts/scr.login.php";
+                break;
+            }
+            case "profile":{
+                include "inc/scripts/scr.profile.php";
+                break;
+            }
+        }
         include_once "inc/scripts/scr.footer.php";
-
     ?>
 
 </body>

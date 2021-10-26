@@ -1,0 +1,14 @@
+:root{
+    --login-background-color: rgb(32, 29, 29);
+}
+
+main{ display: flex; justify-content: center; align-items: center; }
+
+.login{
+    max-width: 400px;
+    width: 80%;
+    background-color: var(--login-background-color);
+    min-height: 50%;
+    text-align: center;
+}
+.login label{ color: white; }

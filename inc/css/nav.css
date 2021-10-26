@@ -125,6 +125,9 @@ nav{
 
 @media screen and (max-width:600px){
 
+    .nav-elements{ display: none; }
+    .nav-elements.nav-active{ display: flex; }
+
     body{
 
         overflow-x: hidden;
@@ -138,7 +141,6 @@ nav{
         height: 92vh;
         top: 8vh;
         background-color: var(--nav-background-color);
-        display: flex;
         flex-direction: column;
         width: 45%;
         transform: translateX(100%);
@@ -163,7 +165,6 @@ nav{
 }
 
 .nav-active{
-
     transform: translateX(0%);
 
 }
