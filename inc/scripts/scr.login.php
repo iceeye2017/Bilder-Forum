@@ -1,9 +1,11 @@
 <main>
     <div class="login">
-        <label for="name">Username</label>
-        <input name="name" type="text" placeholder="Username"></input>
-        <label for="password">Password</label>
-        <input name="password" type="password" placeholder="Password"></input>
-        <input type="submit" name="login" value="Login"></input>
+        <h1>Login</h1>
+        <form action="?site=login_post" method="POST">
+            <input name="name" type="text" placeholder="Username"></input>
+            <input name="password" type="password" placeholder="Password"></input>
+            <input type="submit" class="button" name="login" value="Login"></input>
+        </form>
+        <a href="?site=register">Register</a>
     </div>
 </main>

@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="inc/css/reset.css">
+  <link rel="stylesheet" href="inc/css/form.css">
   <link rel="stylesheet" href="inc/css/nav.css">
   <link rel="stylesheet" href="inc/css/profile.css">
   <link rel="stylesheet" href="inc/css/login.css">

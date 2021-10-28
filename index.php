@@ -1,7 +1,19 @@
 <?php
 
+    const MAX_INACTIVITY_SECONDS = 60 * 60 * 10;
+
     require_once "inc/classes/class.User.php";
     require_once "inc/classes/class.UserManager.php";
+
+    session_start();
+
+    // Regeneriert die Session
+    if (isset($_SESSION["lastActivity"]) && (time()-$_SESSION["lastActivity"] > MAX_INACTIVITY_SECONDS)) {
+        session_destroy();
+    }else{
+        session_regenerate_id(true);
+        $_SESSION["lastActivity"] = time();
+    }
 
     include_once "inc/scripts/scr.head.php";
   

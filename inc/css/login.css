@@ -4,11 +4,8 @@
 
 main{ display: flex; justify-content: center; align-items: center; }
 
-.login{
-    max-width: 400px;
-    width: 80%;
-    background-color: var(--login-background-color);
-    min-height: 50%;
-    text-align: center;
-}
-.login label{ color: white; }
+.login{ display: flex; flex-flow: column; justify-content: center; align-items: center; max-width: 400px; width: 80%; background-color: var(--login-background-color); min-height: 50%; text-align: center; }
+.login label, .login h1{ color: white; }
+.login input[type="submit"]{ margin-top: 10px; }
+.login a{ color: white; font-size: 0.8em; margin-top: 15px;}
+.login form{ display: flex; flex-flow: column; justify-content: center; align-items: center; }
