@@ -144,6 +144,39 @@ EOM;
         return $ret;
     }
 
+    public static function loginUser($username, $password){
+
+        if(!$username||!$password){
+
+            return false;
+
+        }
+
+        $sql = "SELECT upassowrd FROM users WHERE uusername=?";
+
+        $stmt = self::$con->prepare($sql);
+        if (self::$con->errno) {
+            trigger_error($con->error, E_USER_WARNING);
+            return false;
+        }
+
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $stmt->store_result();
+
+        $stmt->bind_result($uhashpass);
+
+        if($stmt->fetch()){
+            
+            return password_verify($password,$uhashpass);
+
+        }
+
+        $stmt->close();
+
+
+    }
+
     public static function close(){
         if(self::$con){
             self::$con->close();
