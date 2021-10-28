@@ -1,6 +1,7 @@
 
 
 //bind event listener to picture
+if(document.getElementById("profileImage")!=undefined)
 document.getElementById("profileImage").addEventListener("click",uploadPic);
 
 function uploadPic(){

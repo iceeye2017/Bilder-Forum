@@ -41,6 +41,10 @@
                 include "inc/scripts/scr.profile.php";
                 break;
             }
+            case "slider":{
+                include "inc/scripts/scr.slider.php";
+                break;
+            }
         }
         include_once "inc/scripts/scr.footer.php";
     ?>

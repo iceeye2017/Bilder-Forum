@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="inc/css/nav.css">
   <link rel="stylesheet" href="inc/css/profile.css">
   <link rel="stylesheet" href="inc/css/login.css">
+  <link rel="stylesheet" href="inc/css/slider.css">
+  
   <script src="https://kit.fontawesome.com/2de15a6a16.js" crossorigin="anonymous"></script>
 
 </head>

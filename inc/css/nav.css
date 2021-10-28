@@ -6,6 +6,11 @@
 --after-hover-color: white;
 --nav-background-color: rgb(32, 29, 29);
 --sub-background-color: rgb(28,28,28);
+--text-color: #f2f2f2;
+--text-absolute-fontsize: 2.4vh;
+--text-font-size: 1em;
+--button-cancel-color: rgb(112, 7, 0);
+
 
 }
 
