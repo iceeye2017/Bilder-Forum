@@ -52,8 +52,13 @@
             case "register":{
                 include "inc/scripts/scr.register.php";
                 break;
-
             }
+            case "register_post":{
+
+                include "inc/scripts/scr.register_post.php";
+                break;
+            }
+
         }
         include_once "inc/scripts/scr.footer.php";
     ?>

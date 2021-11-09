@@ -37,7 +37,7 @@ class UserManager {
 
         if (self::$con->errno) {
           if (self::$con->errno == 1062)
-            $user->setError("username", "Benutzername bereits vergeben");
+            $ret = false;
           else
             trigger_error(self::$con->error, E_USER_WARNING);
             $ret = false;
@@ -45,6 +45,8 @@ class UserManager {
           $ret = true;
         }
         $stmt->close();
+
+        return $ret;
 
     }
 
@@ -146,17 +148,19 @@ EOM;
 
     public static function loginUser($username, $password){
 
-        if(!$username||!$password){
+        $ret = false;
 
-            return false;
+        if(empty($username)||empty($password)){
+
+            return $ret;
 
         }
 
-        $sql = "SELECT upassowrd FROM users WHERE uusername=?";
+        $sql = "SELECT upassword FROM users WHERE uname=?";
 
         $stmt = self::$con->prepare($sql);
         if (self::$con->errno) {
-            trigger_error($con->error, E_USER_WARNING);
+            trigger_error(self::$con->error, E_USER_WARNING);
             return false;
         }
 
@@ -168,12 +172,13 @@ EOM;
 
         if($stmt->fetch()){
             
-            return password_verify($password,$uhashpass);
+            $ret = password_verify($password,$uhashpass);    
 
         }
 
         $stmt->close();
 
+        return $ret;
 
     }
 
