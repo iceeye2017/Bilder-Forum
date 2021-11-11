@@ -4,7 +4,7 @@
 
         <div class = "profilePic">
 
-            <img id="profilePic" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile Picture"/>
+            <img id="profilePic" src="./inc/picture/emptyProfile.png" alt="Profile Picture"/>
 
             
             <div id="profileImage" class="p-image avatar">

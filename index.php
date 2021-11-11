@@ -45,6 +45,20 @@
                 include "inc/scripts/scr.slider.php";
                 break;
             }
+            case "login_post":{
+                include "inc/scripts/scr.login_post.php";
+                break;
+            }
+            case "register":{
+                include "inc/scripts/scr.register.php";
+                break;
+            }
+            case "register_post":{
+
+                include "inc/scripts/scr.register_post.php";
+                break;
+            }
+
         }
         include_once "inc/scripts/scr.footer.php";
     ?>
