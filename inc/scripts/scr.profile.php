@@ -1,57 +1,31 @@
 <main>
 
-    <form name="profileForm" method="post" action="#">
+    <div class = "profilePic">
 
-        <div class = "profilePic">
+        <img src="https://www.inixgroup.com/wp-content/uploads/2020/12/placeholder.png" alt="Profile Picture"/>
 
-            <img id="profilePic" src="./inc/picture/emptyProfile.png" alt="Profile Picture"/>
+        
+        <div id="profileImage" class="p-image avatar">
+            <i class="fa fa-camera upload-button"></i>
 
-            
-            <div id="profileImage" class="p-image avatar">
-                <i class="fa fa-camera upload-button"></i>
+            <form name="profileForm" method="post" action="#">
+                <input id="imageUpload" class="file-upload" type="file" accept="image/*"/>
+            </form>
 
-            
-                    <input id="imageUpload" class="file-upload" type="file" accept="image/*" onchange="previewFile()"/>
+        </div>
+     </div>
+
+    </div>
+
+    <ul class="userInformation">
+
+        <li>Username</li>
+        
         
 
-            </div>
-        </div>
-
-        </div>
-
-        <ul class="userInformation">
-
-            <li>
-
-                <input id="username" type="text" readonly placeholder="Username"/>
-                <div id="userpen" class="pen"><i id="usernamePen" class="fa fa-solid fa-pen"  onclick="changeUsername()"></i></div>
-
-            </li>
-
-            <li>
-
-                <input id="oldPassword" type="password" readonly placeholder="Password"/>
-                <div id="passpen" class="pen"><i id="passwordPen" class="fa fa-solid fa-pen" onclick="changePassword()"></i></div>
-                
-            </li>
-
-            <li id = "newPassword">
-
-                <input name = "newPassword" type="password" placeholder="New Password"/>
-                <div id="hiddenPen" class="pen"><i class="fa fa-solid fa-pen"></i></div>
-                
-            </li>
-
-        </ul>
-
-        <div class = "profileButtons">
-
-            <input type="submit"class="button" id ="bcancel" onclick="buttoncancel()" value="Cancel">
-            <input type="submit"class="button" id ="bsave" value="Save">
-
-        </div>
+    </ul>
 
 
-    </form> 
+
 
 </main>
