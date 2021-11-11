@@ -6,6 +6,11 @@
 --after-hover-color: white;
 --nav-background-color: rgb(32, 29, 29);
 --sub-background-color: rgb(28,28,28);
+--text-color: #f2f2f2;
+--text-absolute-fontsize: 2.4vh;
+--text-font-size: 1em;
+--button-cancel-color: rgb(112, 7, 0);
+
 
 }
 
@@ -36,6 +41,7 @@ body{
 
 nav{
 
+    z-index: 100;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -48,6 +54,7 @@ nav{
 
 .nav-elements{
 
+    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -59,6 +66,7 @@ nav{
 .nav-elements li{
 
     list-style: none;
+    
     
 }
 
@@ -125,6 +133,9 @@ nav{
 
 @media screen and (max-width:600px){
 
+    .nav-elements{ display: none; }
+    .nav-elements.nav-active{ display: flex; }
+
     body{
 
         overflow-x: hidden;
@@ -138,7 +149,6 @@ nav{
         height: 92vh;
         top: 8vh;
         background-color: var(--nav-background-color);
-        display: flex;
         flex-direction: column;
         width: 45%;
         transform: translateX(100%);
@@ -163,7 +173,6 @@ nav{
 }
 
 .nav-active{
-
     transform: translateX(0%);
 
 }

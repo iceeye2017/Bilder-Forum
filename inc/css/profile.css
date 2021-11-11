@@ -1,14 +1,12 @@
-:root{
 
-    --sub-background-color: rgb(38, 38, 38);
-    --text-color: #f2f2f2;
-    --nav-background-color: rgb(32, 29, 29);
-
+body{
+    min-height: 100vh;
+    background-color: var(--sub-background-color);
 }
-
 
 main{
     
+    font-size: var(--text-absolute-fontsize);
     background-color: var(--sub-background-color);
     height: 92vh;
 
@@ -26,10 +24,10 @@ main{
 .profilePic img{
 
     position: relative;
-    width: 400px;
-    height: 400px;
-    border: 8px solid var(--text-color);
-    border-radius: 100%;
+    width: 40vh;
+    height: 40vh;
+    border: 4px solid var(--text-color);
+    border-radius: 50%;
     
 
 }
@@ -47,7 +45,7 @@ main{
 }
 .upload-button{
 
-    font-size: 25px;
+    font-size: var(--text-font-size);
     color: var(--nav-background-color);
 
 }
@@ -63,8 +61,8 @@ main{
 
     margin-top: 2vh;
     display: flex;
-    justify-content: center;
-    font-size: 18px;
+    flex-direction: column;
+    font-size: var(--text-font-size);
     color: var(--logo-color);
     
 
@@ -73,16 +71,69 @@ main{
 .userInformation li{
 
     list-style: none;
-    
+    text-align: center;
 
 }
+
+#newPassword{
+
+    display: none;
+
+}
+
+.profileButtons{
+
+    text-align: center;
+    display: none;
+
+
+}
+
+#bcancel, #bsave{
+
+    margin-top: 1vh;   
+
+}
+#bcancel{
+
+    border-color: var(--button-cancel-color);
+    margin-right: 1vh;
+    background-color: var(--sub-background-color);
+
+}
+#bcancel:hover, #bcancel:focus{
+
+    background-color: var(--button-cancel-color);
+
+}
+
+#bsave{
+
+    margin-left: 1vh;
+
+}
+
+.pen{
+
+    display: inline;
+    font-size: var(--text-font-size);
+    cursor: pointer;
+
+}
+
+#hiddenpen{
+
+    visibility: hidden;
+
+}
+
 
 @media screen and (max-width: 600px) {
 
     .profilePic img{
      
-        width: 250px;
-        height: 250px;
+        width: 25vh;
+        height: 25vh;
     
     }  
     .userInformation{
@@ -92,4 +143,17 @@ main{
     
     }
     
+}
+
+@media screen and (max-width: 350px) {
+
+
+    .userInformation li input{
+
+
+        width: 20vh;
+
+    }
+
+
 }
