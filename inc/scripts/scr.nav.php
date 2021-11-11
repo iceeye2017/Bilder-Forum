@@ -12,18 +12,16 @@
                 
         <ul class = nav-elements>
 
+            <li><a href="#">Profile</a></li>
+
             <li><a href="#">Discover</a></li>
-
-            <li><a href="#">Gallery</a></li>
-
-            <li><a href="?site=profile">Profile</a></li>
             
             <!-- Login Icon -->
 
             <li class="loginIcon">
                 <div>
                 
-                    <a href="?site=login"><i class="fas fa-sign-in-alt"></i>Login</a>
+                    <a href="#"><i class="fas fa-sign-in-alt"></i>Login</a>
             
                 </div>
             </li>
