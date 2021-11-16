@@ -12,19 +12,37 @@
                 
         <ul class = nav-elements>
 
-            <li><a href="#">Discover</a></li>
+            <li><a href="?site=discover">Discover</a></li>
 
-            <li><a href="#">Gallery</a></li>
+            <li <?php echo empty($_SESSION["user"]) ? "style='display:none'":" "?>><a href="?site=gallery">Gallery</a></li>
 
-            <li><a href="?site=profile">Profile</a></li>
+            <li <?php echo empty($_SESSION["user"]) ? "style='display:none'":" "?>><a href="?site=profile">Profile</a></li>
             
             <!-- Login Icon -->
 
             <li class="loginIcon">
                 <div>
                 
+                    <?php
+
+                        if(!isset($_SESSION["user"])){
+                             
+                    ?>
                     <a href="?site=login"><i class="fas fa-sign-in-alt"></i>Login</a>
+
+                    <?php
+
+                        }else{
+
+                    ?>
+                    <a href="?site=logout"><i class="fas fa-sign-in-alt"></i>Logout</a>
             
+                    <?php
+
+                        }
+
+                    ?>
+
                 </div>
             </li>
 
