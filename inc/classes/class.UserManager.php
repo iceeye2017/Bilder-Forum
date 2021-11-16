@@ -76,6 +76,32 @@ class UserManager {
         return false;
     }
 
+    public static function getUserById($userId){
+        if(!$userId)
+            return;
+
+        $stmt = self::$con->prepare("SELECT uname, uemail, uprofileimg, uprofileimgtype FROM users WHERE uid=?");
+        if(self::$con->errno) {
+            trigger_error(self::$con->error, E_USER_WARNING);
+            return false;
+        }
+        
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+    
+        $stmt->store_result();
+        
+        $stmt->bind_result($username, $email, $profileimg, $profileimgtype);
+
+        if($stmt->fetch()){
+            return new User($username, $email, $profileimg, $profileimgtype);
+        }
+
+        $stmt->close();
+
+        return false;
+    }
+
     public static function updateUser($user, $oldUsername){
         if(!$user || !$oldUsername)
             return;

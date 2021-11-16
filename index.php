@@ -3,7 +3,9 @@
     const MAX_INACTIVITY_SECONDS = 60 * 60 * 10;
 
     require_once "inc/classes/class.User.php";
+    require_once "inc/classes/class.Image.php";
     require_once "inc/classes/class.UserManager.php";
+    require_once "inc/classes/class.ImageManager.php";
 
     session_start();
 
@@ -18,10 +20,10 @@
     include_once "inc/scripts/scr.head.php";
   
     UserManager::connect("root", "", "localhost", "bilderforum");
+    ImageManager::connect("root", "", "localhost", "bilderforum");
 
 ?>
 <body>
-
 
     <?php
 
@@ -54,8 +56,11 @@
                 break;
             }
             case "register_post":{
-
                 include "inc/scripts/scr.register_post.php";
+                break;
+            }
+            case "gallery":{
+                include "inc/scripts/scr.gallery.php";
                 break;
             }
 
@@ -68,5 +73,6 @@
 <?php
 
   UserManager::close();
+  ImageManager::close();
 
 ?>
