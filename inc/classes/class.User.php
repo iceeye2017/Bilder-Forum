@@ -47,6 +47,18 @@ class User{
         $this->imageType = $imageType;
     }
 
+    public function setImageFromSuperglobal($image) {
+
+        if (isset($image) && $image["error"] == UPLOAD_ERR_OK) {
+            
+            $this->imageType = $image["type"];
+            $file = fopen($image["tmp_name"], "rb");
+            $this->image = fread($file, $image["size"]);
+            fclose($file);
+
+        }
+    }
+
 }
 
 ?>

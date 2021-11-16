@@ -19,18 +19,26 @@
   
     UserManager::connect("root", "", "localhost", "bilderforum");
 
+    $site = "discover";
+    if(isset($_GET["site"]) && !empty($_GET["site"])){
+        $site = $_GET["site"];
+        $site = strtolower($_GET["site"]);
+    }
+
+    if($site == "gallery" && $site =="profile" && empty($_SESSION["user"])){
+
+            $site = "login";
+
+    }
+
+
 ?>
 <body>
 
 
     <?php
 
-        include_once "inc/scripts/scr.nav.php";
-        $site = "profile";
-        if(isset($_GET["site"]) && !empty($_GET["site"])){
-            $site = $_GET["site"];
-            $site = strtolower($_GET["site"]);
-        }
+        include_once "inc/scripts/scr.nav.php";    
         
         switch($site){
             case "login": {
@@ -57,6 +65,17 @@
 
                 include "inc/scripts/scr.register_post.php";
                 break;
+            }
+            case "logout";{
+
+                include "inc/scripts/scr.logout.php";
+
+            }
+            case "gallery":{
+
+                include "inc/scripts/scr.gallery.php";
+                break;
+
             }
 
         }
