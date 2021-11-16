@@ -54,8 +54,6 @@ function initDots(sliderIndex){
         return;
 
     let itemsCount = $(slider).find(".slide").length;
-    console.log(itemsCount);
-    console.log("create dots")
     for(let i = 0; i < itemsCount; i++){
         let html = "<span class='dot' onclick='switchSlide(" + sliderIndex + ", " + i + ")'></span>";
         $(dotsDiv).append(html);
