@@ -25,12 +25,6 @@
         $site = strtolower($_GET["site"]);
     }
 
-    if($site == "gallery" && $site =="profile" && empty($_SESSION["user"])){
-
-            $site = "login";
-
-    }
-
 
 ?>
 <body>

@@ -2,17 +2,32 @@
 
     <?php
 
+    $username = filter_input(INPUT_POST, "username",FILTER_SANITIZE_STRING);
+    $password = filter_input(INPUT_POST, "oldPassword",FILTER_SANITIZE_STRING);
+    $confpassword = filter_input(INPUT_POST, "newPassword",FILTER_SANITIZE_STRING);
+    $oldUsername = $_SESSION["user"]->getUsername();
 
-        if(!empty($_FILES["imageUpload"]))
-            $_SESSION["user"]->setImageFromSuperglobal($_FILES["imageUpload"]);
-       
-        UserManager::updateUser($_SESSION["user"], $_SESSION["user"]->getUsername());
+    if($password == $confpassword && !empty($password))
+        UserManager::updatePassword($oldUsername, $password);
 
+    if(!empty($username)){
         
+        $_SESSION["user"]->setUsername($username);
         
+    }
+
+    if(!empty($_FILES["imageUpload"]))
+
+        $_SESSION["user"]->setImageFromSuperglobal($_FILES["imageUpload"]);
+
+    UserManager::updateUser($_SESSION["user"], $oldUsername);
+
+
+
     ?>
 
-    <form name="profileForm" method="post" action="?site=profile" enctype="multipart/form-data">
+
+    <form method="POST" action="?site=profile" enctype="multipart/form-data">
 
         <div class = "profilePic">
 
@@ -46,25 +61,21 @@
 
             <li>
 
-                <input id="username" type="text" readonly placeholder='<?php
-                
-                    echo $_SESSION["user"]->getUsername();
-                
-                ?>'/>
+                <input id="username" name="username" type="text" readonly placeholder='<?php echo $_SESSION["user"]->getUsername();?>'/>
                 <div id="userpen" class="pen"><i id="usernamePen" class="fa fa-solid fa-pen"  onclick="changeUsername()"></i></div>
 
             </li>
 
             <li>
 
-                <input id="oldPassword" type="password" readonly placeholder="Password"/>
+                <input id="oldPassword" name = "oldPassword" type="password" readonly placeholder="New Password"/>
                 <div id="passpen" class="pen"><i id="passwordPen" class="fa fa-solid fa-pen" onclick="changePassword()"></i></div>
                 
             </li>
 
             <li id = "newPassword">
 
-                <input name = "newPassword" type="password" placeholder="New Password"/>
+                <input name = "newPassword" type="password" placeholder="Confirm Password"/>
                 <div id="hiddenPen" class="pen"><i class="fa fa-solid fa-pen"></i></div>
                 
             </li>
@@ -73,8 +84,8 @@
 
         <div class = "profileButtons">
 
-            <input type="submit"class="button" id ="bcancel" onclick="buttoncancel()" value="Cancel">
-            <input type="submit"class="button" id ="bsave" value="Save">
+            <input type="submit" class="button" id ="bcancel" onclick="buttoncancel()" value="Cancel">
+            <input type="submit" class="button" id ="bsave" value="Save">
 
         </div>
 
