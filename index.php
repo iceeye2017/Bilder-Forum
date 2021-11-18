@@ -3,7 +3,9 @@
     const MAX_INACTIVITY_SECONDS = 60 * 60 * 10;
 
     require_once "inc/classes/class.User.php";
+    require_once "inc/classes/class.Image.php";
     require_once "inc/classes/class.UserManager.php";
+    require_once "inc/classes/class.ImageManager.php";
 
     session_start();
 
@@ -18,19 +20,27 @@
     include_once "inc/scripts/scr.head.php";
   
     UserManager::connect("root", "", "localhost", "bilderforum");
+    ImageManager::connect("root", "", "localhost", "bilderforum");
+
+    $site = "discover";
+    if(isset($_GET["site"]) && !empty($_GET["site"])){
+        $site = $_GET["site"];
+        $site = strtolower($_GET["site"]);
+    }
+
+    if($site == "gallery" && $site =="profile" && empty($_SESSION["user"])){
+
+            $site = "login";
+
+    }
+
 
 ?>
 <body>
 
-
     <?php
 
-        include_once "inc/scripts/scr.nav.php";
-        $site = "profile";
-        if(isset($_GET["site"]) && !empty($_GET["site"])){
-            $site = $_GET["site"];
-            $site = strtolower($_GET["site"]);
-        }
+        include_once "inc/scripts/scr.nav.php";    
         
         switch($site){
             case "login": {
@@ -54,8 +64,14 @@
                 break;
             }
             case "register_post":{
-
                 include "inc/scripts/scr.register_post.php";
+                break;
+            }
+            case "logout";{
+                include "inc/scripts/scr.logout.php";
+            }
+            case "gallery":{
+                include "inc/scripts/scr.gallery.php";
                 break;
             }
 
@@ -68,5 +84,6 @@
 <?php
 
   UserManager::close();
+  ImageManager::close();
 
 ?>
