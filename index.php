@@ -2,6 +2,11 @@
 
     const MAX_INACTIVITY_SECONDS = 60 * 60 * 10;
 
+    const loginNeeded = [
+        "profile",
+        "gallery"
+    ];
+
     require_once "inc/classes/class.User.php";
     require_once "inc/classes/class.Image.php";
     require_once "inc/classes/class.UserManager.php";
@@ -28,12 +33,9 @@
         $site = strtolower($_GET["site"]);
     }
 
-    if($site == "gallery" && $site =="profile" && empty($_SESSION["user"])){
-
-            $site = "login";
-
+    if(in_array($site, loginNeeded) && (!isset($_SESSION["user"]) || empty($_SESSION["user"]))){
+        $site = "login";
     }
-
 
 ?>
 <body>
