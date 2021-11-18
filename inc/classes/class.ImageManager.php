@@ -1,6 +1,6 @@
 <?php
 class ImageManager{
-    const DIR = "/images/"; 
+    const DIR = "./images/"; 
 
     private static $con;
 
@@ -51,11 +51,13 @@ class ImageManager{
 
     public static function saveImageFromSuperglobal($image, $userId) {
         if (isset($image) && $image["error"] == UPLOAD_ERR_OK && isset($userId)) {
-            $type = explode("/", $image["type"]);
-            $name = generateRandomString() . $type;
+            $type = explode("/", $image["type"])[1];
+            $name = self::generateRandomString() . $type;
             $file = $image["tmp_name"];
 
-            mkdir(self::DIR);
+            if (!file_exists(self::DIR)) {
+                mkdir(self::DIR);
+            }
             copy($file, self::DIR . $name);
 
             $image = new Image($name, $userId);
@@ -64,7 +66,7 @@ class ImageManager{
     }
 
     private static function addImage($image){
-        if(!$image || !$userId)
+        if(!$image)
             return;
 
         $stmt = self::$con->prepare("INSERT INTO `images`(`iname`, `uid`) VALUES (?,?);");
@@ -75,7 +77,7 @@ class ImageManager{
         }
 
         $iname = $image->getName();
-        $uid = $user->getUserId();
+        $uid = $image->getUserId();
         
         $stmt->bind_param("si", $iname, $uid);
 

@@ -54,7 +54,7 @@ class UserManager {
         if(!$username)
             return;
 
-        $stmt = self::$con->prepare("SELECT uname, uemail, uprofileimg, uprofileimgtype FROM users WHERE uname=?");
+        $stmt = self::$con->prepare("SELECT uid, uname, uemail, uprofileimg, uprofileimgtype FROM users WHERE uname=?");
         if(self::$con->errno) {
             trigger_error(self::$con->error, E_USER_WARNING);
             return false;
@@ -65,10 +65,10 @@ class UserManager {
     
         $stmt->store_result();
         
-        $stmt->bind_result($username, $email, $profileimg, $profileimgtype);
-
+        $stmt->bind_result($uid, $username, $email, $profileimg, $profileimgtype);
+        
         if($stmt->fetch()){
-            return new User($username, $email, $profileimg, $profileimgtype);
+            return new User($uid, $username, $email, $profileimg, $profileimgtype);
         }
 
         $stmt->close();
@@ -80,7 +80,7 @@ class UserManager {
         if(!$userId)
             return;
 
-        $stmt = self::$con->prepare("SELECT uname, uemail, uprofileimg, uprofileimgtype FROM users WHERE uid=?");
+        $stmt = self::$con->prepare("SELECT uid, uname, uemail, uprofileimg, uprofileimgtype FROM users WHERE uid=?");
         if(self::$con->errno) {
             trigger_error(self::$con->error, E_USER_WARNING);
             return false;
@@ -91,10 +91,10 @@ class UserManager {
     
         $stmt->store_result();
         
-        $stmt->bind_result($username, $email, $profileimg, $profileimgtype);
+        $stmt->bind_result($uid, $username, $email, $profileimg, $profileimgtype);
 
         if($stmt->fetch()){
-            return new User($username, $email, $profileimg, $profileimgtype);
+            return new User($uid, $username, $email, $profileimg, $profileimgtype);
         }
 
         $stmt->close();

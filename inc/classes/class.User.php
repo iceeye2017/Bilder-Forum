@@ -2,17 +2,24 @@
 
 class User{
 
+    private $id;
+
     private $email;
     private $username;
 
     private $image;
     private $imageType;
 
-    public function __construct($username, $email, $image = null, $imageType = ""){
+    public function __construct($id, $username, $email, $image = null, $imageType = ""){
+        $this->id = $id;
         $this->username = $username;
         $this->email = $email;
         $this->image = $image;
         $this->imageType = $imageType;
+    }
+
+    public function getId(){
+        return $this->id;
     }
 
     public function getUsername(){

@@ -9,7 +9,7 @@
 
     if(!empty($password) && $password == $confirmpassword && !empty($email) && !empty($username)){
 
-        if(UserManager::addUser(new User($username,$email), $password)){
+        if(UserManager::addUser(new User(0, $username,$email), $password)){
 
              header("Location:index.php?site=login");
 
