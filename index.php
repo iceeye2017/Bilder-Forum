@@ -24,8 +24,8 @@
 
     include_once "inc/scripts/scr.head.php";
   
-    UserManager::connect("root", "", "localhost", "bilderforum");
-    ImageManager::connect("root", "", "localhost", "bilderforum");
+    UserManager::connect("root", "root", "localhost", "bilderforum");
+    ImageManager::connect("root", "root", "localhost", "bilderforum");
 
     $site = "discover";
     if(isset($_GET["site"]) && !empty($_GET["site"])){
@@ -75,6 +75,12 @@
             case "gallery":{
                 include "inc/scripts/scr.gallery.php";
                 break;
+            }
+            case "user":{
+
+                include "inc/scripts/scr.user.php";
+                break;
+
             }
 
         }

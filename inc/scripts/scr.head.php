@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="inc/css/login.css">
   <link rel="stylesheet" href="inc/css/slider.css">
   <link rel="stylesheet" href="inc/css/gallery.css">
+  <link rel = "stylesheet" href="inc/css/user.css">
   
   <script src="https://kit.fontawesome.com/2de15a6a16.js" crossorigin="anonymous"></script>
 
