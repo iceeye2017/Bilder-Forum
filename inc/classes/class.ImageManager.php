@@ -108,5 +108,55 @@ class ImageManager{
         return $randomString;
     }
 
+    private static function getRandomImages(){
+        $sql = "SELECT iname, uid FROM images ORDER BY RAND() LIMIT 5";
+        $stmt = self::$con->prepare($sql);
+        if(self::$con->errno) {
+            trigger_error(self::$con->error, E_USER_WARNING);
+            return false;
+        }
+
+        $stmt->execute();
+        $stmt->store_result();
+        $stmt->bind_result($iname, $uid);
+
+        $ret = [];
+        while($stmt->fetch()){
+            $ret[] = new Image($iname, $uid);
+        }
+        $stmt->close();
+
+        return $ret;
+    }
+
+    public static function getRandomImagesHTML(){
+        $images = ImageManager::getRandomImages();
+
+        $out = <<<EOM
+        <div class="slider">
+            <div class="slideshow-container">
+EOM;
+        foreach($images as $image){
+            $url = ImageManager::getImagePath($image);
+            $user = $image->getUser();
+            $username = $user->getUsername();
+            $out .= <<<EOM
+                <div class="slide">
+                    <img src="$url" style="width:100%">
+                    <p>$username</p>
+                </div>
+        EOM;
+        }
+
+        $out .= <<<EOM
+                <a class="ctrl prev">&#10094;</a>
+                <a class="ctrl next">&#10095;</a>
+                <div class="dots"></div>
+            </div>
+        </div>
+EOM;
+        return $out;
+    }
+
 }
 ?>
