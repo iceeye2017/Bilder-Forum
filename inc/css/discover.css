@@ -1,0 +1,5 @@
+.discover_content{ padding: 25px 0; }
+.discover_content h1 { color: white; display: flex; justify-content: center; margin: 20px 0 15px 0; }
+.discover_content .slider{ width: 75%; margin: 0 auto; }
+
+#load_more{ position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); }

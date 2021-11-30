@@ -22,10 +22,15 @@
         $_SESSION["lastActivity"] = time();
     }
 
-    include_once "inc/scripts/scr.head.php";
-  
     UserManager::connect("root", "", "localhost", "bilderforum");
     ImageManager::connect("root", "", "localhost", "bilderforum");
+
+    if(isset($_GET["site"]) && !empty($_GET["site"]) && $_GET["site"] === "get_new_slider"){
+        echo ImageManager::getRandomImagesHTML();
+        exit();
+    }
+
+    include_once "inc/scripts/scr.head.php";
 
     $site = "discover";
     if(isset($_GET["site"]) && !empty($_GET["site"])){
@@ -71,14 +76,20 @@
             }
             case "logout";{
                 include "inc/scripts/scr.logout.php";
+                break;
             }
             case "gallery":{
                 include "inc/scripts/scr.gallery.php";
                 break;
             }
+
             case "user":{
 
                 include "inc/scripts/scr.user.php";
+                break;
+            }
+            case "discover":{
+                include "inc/scripts/scr.discover.php";
                 break;
 
             }
