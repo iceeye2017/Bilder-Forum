@@ -24,8 +24,8 @@
 
     include_once "inc/scripts/scr.head.php";
   
-    UserManager::connect("root", "root", "localhost", "bilderforum");
-    ImageManager::connect("root", "root", "localhost", "bilderforum");
+    UserManager::connect("root", "", "localhost", "bilderforum");
+    ImageManager::connect("root", "", "localhost", "bilderforum");
 
     $site = "discover";
     if(isset($_GET["site"]) && !empty($_GET["site"])){
