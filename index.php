@@ -82,9 +82,16 @@
                 include "inc/scripts/scr.gallery.php";
                 break;
             }
+
+            case "user":{
+
+                include "inc/scripts/scr.user.php";
+                break;
+            }
             case "discover":{
                 include "inc/scripts/scr.discover.php";
                 break;
+
             }
 
         }
