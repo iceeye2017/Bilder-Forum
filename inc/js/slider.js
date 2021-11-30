@@ -68,7 +68,7 @@ function initDots(sliderIndex){
 function deleteSlider(){
     // REMOVES DOTS
     $(".slider").each(function(index, slider){
-        $(slider).find(".dots").remove();
+        $(slider).find(".dot").remove();
     });
     // REMOVES EVENT LISTENER
     $(".ctrl.prev").unbind("click");
