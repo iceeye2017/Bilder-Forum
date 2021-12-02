@@ -52,7 +52,7 @@ class ImageManager{
     public static function saveImageFromSuperglobal($image, $userId) {
         if (isset($image) && $image["error"] == UPLOAD_ERR_OK && isset($userId)) {
             $type = explode("/", $image["type"])[1];
-            $name = self::generateRandomString() . $type;
+            $name = self::generateRandomString() . "." . $type;
             $file = $image["tmp_name"];
 
             if (!file_exists(self::DIR)) {
