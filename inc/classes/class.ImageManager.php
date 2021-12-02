@@ -143,7 +143,7 @@ EOM;
             $out .= <<<EOM
                 <div class="slide">
                     <img src="$url" style="width:100%">
-                    <p>$username</p>
+                    <a href="?site=user&user=$username">$username</a>
                 </div>
         EOM;
         }
