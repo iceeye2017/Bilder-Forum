@@ -1,17 +1,40 @@
 <main>
 
-    <form name="profileForm" method="post" action="#">
+    <?php
+
+
+        if(!empty($_FILES["imageUpload"]))
+            $_SESSION["user"]->setImageFromSuperglobal($_FILES["imageUpload"]);
+       
+        UserManager::updateUser($_SESSION["user"], $_SESSION["user"]->getUsername());
+
+        
+        
+    ?>
+
+    <form name="profileForm" method="post" action="?site=profile" enctype="multipart/form-data">
 
         <div class = "profilePic">
 
-            <img id="profilePic" src="./inc/picture/emptyProfile.png" alt="Profile Picture"/>
+            <img id="profilePic" src='
+            
+            <?php 
+            
+                if($_SESSION["user"]->getImage()){
 
+                    echo "data:".$_SESSION["user"]->getImageType().";base64,".base64_encode($_SESSION["user"]->getImage());
+
+                }else
+
+                    echo "./inc/picture/emptyProfile.png";
+            
+            ?>' alt="Profile Picture"/>
             
             <div id="profileImage" class="p-image avatar">
                 <i class="fa fa-camera upload-button"></i>
 
             
-                    <input id="imageUpload" class="file-upload" type="file" accept="image/*" onchange="previewFile()"/>
+                <input id="imageUpload" name="imageUpload" class="file-upload" type="file" accept="image/*" onchange="previewFile()"/>
         
 
             </div>
@@ -23,7 +46,11 @@
 
             <li>
 
-                <input id="username" type="text" readonly placeholder="Username"/>
+                <input id="username" type="text" readonly placeholder='<?php
+                
+                    echo $_SESSION["user"]->getUsername();
+                
+                ?>'/>
                 <div id="userpen" class="pen"><i id="usernamePen" class="fa fa-solid fa-pen"  onclick="changeUsername()"></i></div>
 
             </li>

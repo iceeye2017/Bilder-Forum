@@ -7,3 +7,11 @@ CREATE TABLE users(
     uprofileimgtype VARCHAR(10),
     PRIMARY KEY(uid)
 ) ENGINE=InnoDB;
+
+CREATE TABLE images(
+    iname VARCHAR(60) NOT NULL,
+    uid INT NOT NULL,
+    PRIMARY KEY(iname),
+    FOREIGN KEY(uid) REFERENCES users(uid)
+    ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
