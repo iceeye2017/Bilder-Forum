@@ -1,0 +1,25 @@
+.upicUname{
+
+    padding-top: 3vh;
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    padding-bottom: 3vh;
+
+}
+
+.upicUname img{
+
+    width: 10vh;
+    padding-right: 4vh;
+    padding-left: 4vh;
+    border-radius: 50%;
+
+}
+
+.user{
+
+    width: 60%;
+    margin: 0 auto;
+
+}

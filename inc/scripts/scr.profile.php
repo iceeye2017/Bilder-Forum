@@ -2,17 +2,27 @@
 
     <?php
 
-    $username = filter_input(INPUT_POST, "username",FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST, "oldPassword",FILTER_SANITIZE_STRING);
-    $confpassword = filter_input(INPUT_POST, "newPassword",FILTER_SANITIZE_STRING);
-    $oldUsername = $_SESSION["user"]->getUsername();
 
-    if($password == $confpassword && !empty($password))
-        UserManager::updatePassword($oldUsername, $password);
+        $username = filter_input(INPUT_POST, "username",FILTER_SANITIZE_STRING);
+        $password = filter_input(INPUT_POST, "oldPassword",FILTER_SANITIZE_STRING);
+        $confpassword = filter_input(INPUT_POST, "newPassword",FILTER_SANITIZE_STRING);
+        $oldUsername = $_SESSION["user"]->getUsername();
 
-    if(!empty($username)){
-        
-        $_SESSION["user"]->setUsername($username);
+        if($password == $confpassword && !empty($password))
+            UserManager::updatePassword($oldUsername, $password);
+
+        if(!empty($username)){
+            
+            $_SESSION["user"]->setUsername($username);
+            
+        }
+
+        if(!empty($_FILES["imageUpload"]))
+
+            $_SESSION["user"]->setImageFromSuperglobal($_FILES["imageUpload"]);
+
+        UserManager::updateUser($_SESSION["user"], $oldUsername);
+
         
     }
 
@@ -61,14 +71,18 @@
 
             <li>
 
+
                 <input id="username" name="username" type="text" readonly placeholder='<?php echo $_SESSION["user"]->getUsername();?>'/>
+
                 <div id="userpen" class="pen"><i id="usernamePen" class="fa fa-solid fa-pen"  onclick="changeUsername()"></i></div>
 
             </li>
 
             <li>
 
+
                 <input id="oldPassword" name = "oldPassword" type="password" readonly placeholder="New Password"/>
+
                 <div id="passpen" class="pen"><i id="passwordPen" class="fa fa-solid fa-pen" onclick="changePassword()"></i></div>
                 
             </li>

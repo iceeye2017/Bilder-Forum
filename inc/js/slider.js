@@ -4,6 +4,11 @@ $(document).ready(() => {
     initSlider();
 });
 
+function updateSlider(){
+    deleteSlider();
+    initSlider();
+}
+
 function initSlider(){
     $(".slider").each((index, elem) => {
         counter.set(index, 0);
@@ -54,10 +59,22 @@ function initDots(sliderIndex){
         return;
 
     let itemsCount = $(slider).find(".slide").length;
-    console.log(itemsCount);
-    console.log("create dots")
     for(let i = 0; i < itemsCount; i++){
         let html = "<span class='dot' onclick='switchSlide(" + sliderIndex + ", " + i + ")'></span>";
         $(dotsDiv).append(html);
     }
+}
+
+function deleteSlider(){
+    // REMOVES DOTS
+    $(".slider").each(function(index, slider){
+        $(slider).find(".dot").remove();
+    });
+    // REMOVES EVENT LISTENER
+    $(".ctrl.prev").unbind("click");
+    $(".ctrl.next").unbind("click");
+
+    $(".slider").removeClass (function (index, className) {
+        return (className.match (/(^|\s)slider+\S+/g) || []).join(' ');
+    });
 }
