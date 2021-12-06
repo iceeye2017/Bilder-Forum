@@ -23,9 +23,6 @@
 
         UserManager::updateUser($_SESSION["user"], $oldUsername);
 
-        
-    }
-
     if(!empty($_FILES["imageUpload"]))
 
         $_SESSION["user"]->setImageFromSuperglobal($_FILES["imageUpload"]);
