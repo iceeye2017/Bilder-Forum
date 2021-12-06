@@ -91,7 +91,11 @@
             case "discover":{
                 include "inc/scripts/scr.discover.php";
                 break;
-
+            }
+            
+            default: {
+                header("Location: ./?site=discover");
+                exit();
             }
 
         }
