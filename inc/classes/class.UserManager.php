@@ -104,7 +104,7 @@ class UserManager {
 
     public static function updateUser($user, $oldUsername){
         if(!$user || !$oldUsername)
-            return;
+            return false;
 
         $sql = <<<EOM
             UPDATE users
@@ -129,7 +129,7 @@ EOM;
         $uprofileimgtype = $user->getImageType();
 
         $stmt->bind_param("ssbss", $uname, $uemail, $null, $uprofileimgtype, $oldUsername);
-        $stmt->send_long_data(4, $user->getImage());
+        $stmt->send_long_data(2, $user->getImage());
 
         $stmt->execute();
 
@@ -213,6 +213,45 @@ EOM;
             self::$con->close();
         }
     }
+
+    public static function updatePassword($username, $password){
+        if(!$username || !$password)
+            return;
+
+        $sql = <<<EOM
+            UPDATE users
+            SET
+            upassword = ?
+            WHERE
+            uname=?;
+EOM;
+
+        $stmt = self::$con->prepare($sql);
+        if(self::$con->errno) {
+            trigger_error(self::$con->error, E_USER_WARNING);
+            return false;
+        }
+
+        $upassword = password_hash($password, PASSWORD_DEFAULT);
+
+        $stmt->bind_param("ss", $upassword, $username);
+
+        $stmt->execute();
+
+        $ret = false;
+        if (self::$con->errno) {
+            if (self::$con->errno == 1062)
+                $ret = false;
+            else
+              trigger_error($con->error, E_USER_WARNING);
+              $ret = false;
+          } else {
+            $ret = true;
+          }
+          $stmt->close();
+          return $ret;
+    }
+
 
 }
 

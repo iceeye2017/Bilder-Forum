@@ -38,9 +38,11 @@
         $site = strtolower($_GET["site"]);
     }
 
+
     if(in_array($site, loginNeeded) && (!isset($_SESSION["user"]) || empty($_SESSION["user"]))){
         $site = "login";
     }
+
 
 ?>
 <body>
