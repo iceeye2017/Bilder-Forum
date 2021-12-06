@@ -2,17 +2,24 @@
 
 class User{
 
+    private $id;
+
     private $email;
     private $username;
 
     private $image;
     private $imageType;
 
-    public function __construct($username, $email, $image = null, $imageType = ""){
+    public function __construct($id, $username, $email, $image = null, $imageType = ""){
+        $this->id = $id;
         $this->username = $username;
         $this->email = $email;
         $this->image = $image;
         $this->imageType = $imageType;
+    }
+
+    public function getId(){
+        return $this->id;
     }
 
     public function getUsername(){
@@ -45,6 +52,18 @@ class User{
 
     public function setImageType($imageType){
         $this->imageType = $imageType;
+    }
+
+    public function setImageFromSuperglobal($image) {
+
+        if (isset($image) && $image["error"] == UPLOAD_ERR_OK) {
+            
+            $this->imageType = $image["type"];
+            $file = fopen($image["tmp_name"], "rb");
+            $this->image = fread($file, $image["size"]);
+            fclose($file);
+
+        }
     }
 
 }

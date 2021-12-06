@@ -6,6 +6,7 @@
 
     if(UserManager::loginUser($username, $password)){
 
+        $_SESSION["user"] = UserManager::getUser($username);
         header("Location:index.php");
 
     }else

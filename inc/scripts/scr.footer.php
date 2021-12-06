@@ -7,3 +7,5 @@
 <script src="inc/js/profile.js"></script>
 
 <script src="inc/js/slider.js"></script>
+
+<script src="inc/js/discover.js"></script>
