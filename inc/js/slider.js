@@ -3,12 +3,16 @@ let counter = new Map();
 $(document).ready(() => {
     initSlider();
 });
-
+//Delete all slideshows and reinitialise them
 function updateSlider(){
     deleteSlider();
     initSlider();
 }
-
+/*
+Initialise slideshows and add a unique index number to every singel one
+Set standard picture
+And init the left and right navigation button
+*/
 function initSlider(){
     $(".slider").each((index, elem) => {
         counter.set(index, 0);
@@ -16,7 +20,7 @@ function initSlider(){
         initDots(index);
         switchSlide(index, 0);
     });
-
+    //Button
     $(".ctrl.prev").click(function(){
         let slider = $(this).closest(".slider");
         let sliderIndex = $(".slider").index(slider);
@@ -29,7 +33,7 @@ function initSlider(){
         }
         switchSlide(sliderIndex, slideIndex);
     });
-
+    //Other button
     $(".ctrl.next").click(function(){
         let slider = $(this).closest(".slider");
         let sliderIndex = $(".slider").index(slider);
@@ -42,7 +46,7 @@ function initSlider(){
         switchSlide(sliderIndex, slideIndex);
     });
 }
-
+//Button event to switch picture
 function switchSlide(sliderIndex, slideIndex){
     counter.set(sliderIndex, slideIndex);
     $(".slider.slider" + sliderIndex + " .slide").removeClass("active");

@@ -16,7 +16,7 @@ if(isset($_POST["submit"]) && isset($_FILES["imageUpload"]) && isset($_SESSION["
 
 <?php
 
-// TODO: Search for username if in get params
+// get the pcitures form database
 if(isset($_SESSION["user"])){
     $user = $_SESSION["user"];
     $images = ImageManager::getImagesFromUser($user->getId());

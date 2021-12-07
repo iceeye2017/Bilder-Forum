@@ -22,6 +22,10 @@ class ImageManager{
         return self::DIR . $image->getName();
     }
 
+    /**
+     * Return all images from user with id in form of array
+     * else false
+     */
     public static function getImagesFromUser($userId){
         if(!$userId)
             return;
@@ -129,6 +133,11 @@ class ImageManager{
         return $ret;
     }
 
+    /**
+     * 
+     *  Return the html code for the slideshow with random images
+     * 
+     */
     public static function getRandomImagesHTML(){
         $images = ImageManager::getRandomImages();
 

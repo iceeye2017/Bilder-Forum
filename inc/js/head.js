@@ -1,3 +1,9 @@
+/*
+    Bind clickevent to burger to show the content
+
+*/
+
+
 
 const navSlider = () => {
 

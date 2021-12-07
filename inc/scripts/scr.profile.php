@@ -2,34 +2,31 @@
 
     <?php
 
+        //Get new UserInformation after change
 
         $username = filter_input(INPUT_POST, "username",FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, "oldPassword",FILTER_SANITIZE_STRING);
         $confpassword = filter_input(INPUT_POST, "newPassword",FILTER_SANITIZE_STRING);
         $oldUsername = $_SESSION["user"]->getUsername();
 
+        //Change password
+
         if($password == $confpassword && !empty($password))
             UserManager::updatePassword($oldUsername, $password);
 
+        //Change Username
         if(!empty($username)){
             
             $_SESSION["user"]->setUsername($username);
             
         }
 
-        if(!empty($_FILES["imageUpload"]))
-
-            $_SESSION["user"]->setImageFromSuperglobal($_FILES["imageUpload"]);
-
-        UserManager::updateUser($_SESSION["user"], $oldUsername);
-
+        //Change Profile Picture
     if(!empty($_FILES["imageUpload"]))
 
         $_SESSION["user"]->setImageFromSuperglobal($_FILES["imageUpload"]);
 
-    UserManager::updateUser($_SESSION["user"], $oldUsername);
-
-
+        UserManager::updateUser($_SESSION["user"], $oldUsername);
 
     ?>
 

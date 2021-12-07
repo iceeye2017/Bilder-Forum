@@ -2,7 +2,7 @@
     <h1>Discover</h1>
 
     <?php
-
+        //Inlcudes the slideshows
     $html = ImageManager::getRandomImagesHTML();
     echo $html;
 

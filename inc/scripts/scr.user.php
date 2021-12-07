@@ -1,5 +1,7 @@
 <?php
 
+    //Check if user exists 
+
     if(empty($_GET["user"]))
         header("Location:index.php");
     else

@@ -1,19 +1,5 @@
-/*
-$(window).scroll(function(){
-    // Gets current scroll level
-    let scroll = $(document).scrollTop();
-    // Gets height of document
-    let dHeight = $(document).height();
-    // Gets height of window
-    let wHeight = $(window).height();
-    
-    let diff = dHeight - wHeight;
-    if(diff - scroll < 2){
-        loadDoc();
-    }
-});
-*/
 
+//Ajax request for more slideshows
 $("#load_more").click(loadDoc);
 
 let loading = false;

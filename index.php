@@ -21,7 +21,7 @@
         session_regenerate_id(true);
         $_SESSION["lastActivity"] = time();
     }
-
+    //connect to database
     UserManager::connect("root", "", "localhost", "bilderforum");
     ImageManager::connect("root", "", "localhost", "bilderforum");
 
@@ -32,13 +32,16 @@
 
     include_once "inc/scripts/scr.head.php";
 
+    //default page = discover
+
     $site = "discover";
     if(isset($_GET["site"]) && !empty($_GET["site"])){
         $site = $_GET["site"];
         $site = strtolower($_GET["site"]);
     }
 
-
+    //Block sites for not logged in users
+    
     if(in_array($site, loginNeeded) && (!isset($_SESSION["user"]) || empty($_SESSION["user"]))){
         $site = "login";
     }
@@ -51,6 +54,8 @@
 
         include_once "inc/scripts/scr.nav.php";    
         
+        //Include the right script in respect to the variable $site
+
         switch($site){
             case "login": {
                 include "inc/scripts/scr.login.php";

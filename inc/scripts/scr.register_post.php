@@ -1,5 +1,7 @@
 <?php
 
+    //Get data from form and validate
+
     $username = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
